@@ -16,7 +16,6 @@
 define( 'CONTROLLERCONS_VERSION', '0.1.0' );
 define( 'CONTROLLERCONS_DIR', dirname( __FILE__ ) . '/' );  
 
-
 if ( ! class_exists( 'Controllercons' ) ) :
 
 if ( is_admin() ) {
@@ -68,9 +67,6 @@ class Controllercons
 			'wiiu_outlined',
 		);
 		
-		// Admin
-		add_action( 'admin_enqueue_scripts', array( $this, 'load_styles' ) );
-		
 		// Public
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_styles' ) );
 	}
@@ -78,7 +74,7 @@ class Controllercons
 	public function load_styles()
 	{
 		// @TODO add setting for minified source
-		wp_register_style( 'controllercons', plugins_url( 'controllercons/css/controllercons.css', __FILE__ ), false, $this->version );
+		wp_register_style( 'controllercons', plugins_url( 'css/controllercons.css', __FILE__ ), false, $this->version );
 		wp_enqueue_style( 'controllercons' );
 	}
 	
@@ -98,6 +94,19 @@ class Controllercons
 		// @TODO cross reference settings with shortcode class
 	}
 }
+
+function controllercons()
+{
+	global $controllercons;
+	
+	if ( ! isset( $controllercons ) ) {
+		$controllercons = new Controllercons();
+	}
+	
+	return $controllercons;
+}
+
+controllercons();
 
 endif;
 
