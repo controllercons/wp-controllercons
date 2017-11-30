@@ -18,13 +18,19 @@ add_action( 'admin_menu', 'controllercons_add_menu' );
 function controllercons_admin_styles()
 {
 	// Admin
-	wp_register_style( 'controllercons', plugins_url( 'controllercons/css/controllercons.css' ), false, CONTROLLERCONS_VERSION );
+	wp_register_style( 'controllercons-font', plugins_url( 'css/controllercons-font.css', __FILE__ ), false, CONTROLLERCONS_VERSION );
 	wp_register_style( 'controllercons-mce', plugins_url( 'css/controllercons-mce.css', __FILE__ ), false, CONTROLLERCONS_VERSION );
 	
-	wp_enqueue_style( 'controllercons' );
+	wp_enqueue_style( 'controllercons-font' );
 	wp_enqueue_style( 'controllercons-mce' );
 }
 add_action( 'admin_enqueue_scripts', 'controllercons_admin_styles' );
+
+function controllercons_editor_styles()
+{
+	add_editor_style( plugins_url( 'css/controllercons-editor-styles.css', __FILE__ ) );
+}
+add_action( 'admin_init', 'controllercons_editor_styles' );
 
 function controllercons_register_settings()
 {

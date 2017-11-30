@@ -1,0 +1,156 @@
+@font-face {
+	font-family: "controllercons";
+	src: url("../../font/controllercons.woff2") format("woff2"),
+		 url("../../font/controllercons.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body#tinymce.wp-editor .cc:before {
+  display: inline-block;
+  font-family: "controllercons";
+  font-style: normal;
+  text-transform: none;
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-align: center;
+  text-decoration: inherit;
+  width: 1em;
+}
+
+body#tinymce.wp-editor .cc-nes:before {
+  content: "\cc000";
+}
+
+body#tinymce.wp-editor .cc-nes-o:before {
+  content: "\cc001";
+}
+
+body#tinymce.wp-editor .cc-megadrive:before {
+  content: "\cc002";
+}
+
+body#tinymce.wp-editor .cc-megadrive-o:before {
+  content: "\cc003";
+}
+
+body#tinymce.wp-editor .cc-snes:before {
+  content: "\cc004";
+}
+
+body#tinymce.wp-editor .cc-snes-o:before {
+  content: "\cc005";
+}
+
+body#tinymce.wp-editor .cc-ps1:before {
+  content: "\cc006";
+}
+
+body#tinymce.wp-editor .cc-ps1-o:before {
+  content: "\cc007";
+}
+
+body#tinymce.wp-editor .cc-n64:before {
+  content: "\cc008";
+}
+
+body#tinymce.wp-editor .cc-n64-o:before {
+  content: "\cc009";
+}
+
+body#tinymce.wp-editor .cc-ps2:before {
+  content: "\cc010";
+}
+
+body#tinymce.wp-editor .cc-ps2-o:before {
+  content: "\cc011";
+}
+
+body#tinymce.wp-editor .cc-xbox:before {
+  content: "\cc012";
+}
+
+body#tinymce.wp-editor .cc-xbox-o:before {
+  content: "\cc013";
+}
+
+body#tinymce.wp-editor .cc-gamecube:before {
+  content: "\cc014";
+}
+
+body#tinymce.wp-editor .cc-gamecube-o:before {
+  content: "\cc015";
+}
+
+body#tinymce.wp-editor .cc-xbox360:before {
+  content: "\cc016";
+}
+
+body#tinymce.wp-editor .cc-xbox360-o:before {
+  content: "\cc017";
+}
+
+body#tinymce.wp-editor .cc-ps3:before {
+  content: "\cc018";
+}
+
+body#tinymce.wp-editor .cc-ps3-o:before {
+  content: "\cc019";
+}
+
+body#tinymce.wp-editor .cc-wii-remote:before {
+  content: "\cc020";
+}
+
+body#tinymce.wp-editor .cc-wii-remote-o:before {
+  content: "\cc021";
+}
+
+body#tinymce.wp-editor .cc-wiiu:before {
+  content: "\cc022";
+}
+
+body#tinymce.wp-editor .cc-wiiu-o:before {
+  content: "\cc023";
+}
+
+body#tinymce.wp-editor .cc-ps4:before {
+  content: "\cc024";
+}
+
+body#tinymce.wp-editor .cc-ps4-o:before {
+  content: "\cc025";
+}
+
+body#tinymce.wp-editor .cc-xboxone:before {
+  content: "\cc026";
+}
+
+body#tinymce.wp-editor .cc-xboxone-o:before {
+  content: "\cc027";
+}
+
+body#tinymce.wp-editor .cc-switch-joycon-l:before {
+  content: "\cc028";
+}
+
+body#tinymce.wp-editor .cc-switch-joycon-l-o:before {
+  content: "\cc029";
+}
+
+body#tinymce.wp-editor .cc-switch-joycon-r:before {
+  content: "\cc030";
+}
+
+body#tinymce.wp-editor .cc-switch-joycon-r-o:before {
+  content: "\cc031";
+}
+
+body#tinymce.wp-editor .cc-switch:before {
+  content: "\cc032";
+}
+
+body#tinymce.wp-editor .cc-switch-o:before {
+  content: "\cc033";
+}

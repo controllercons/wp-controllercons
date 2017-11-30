@@ -17,40 +17,40 @@
 
 		function getControllercons() {
 			return [
-				['cc-nes', 'NES'],
-				['cc-nes-o', 'NES Outlined'],
-				['cc-megadrive', 'SEGA Megadrive/Genesis'],
-				['cc-megadrive-o', 'SEGA Megadrive/Genesis Outlined'],
-				['cc-snes', 'SNES'],
-				['cc-snes-o', 'SNES Outlined'],
-				['cc-ps1', 'PlayStation'],
-				['cc-ps1-o', 'PlayStation Outlined'],
-				['cc-n64', 'N64'],
-				['cc-n64-o', 'N64 Outlined'],
-				['cc-ps2', 'PlayStation 2'],
-				['cc-ps2-o', 'PlayStation 2 Outlined'],
-				['cc-xbox', 'Xbox'],
-				['cc-xbox-o', 'Xbox Outlined'],
-				['cc-gamecube', 'Gamecube'],
-				['cc-gamecube-o', 'Gamecube Outlined'],
-				['cc-xbox360', 'Xbox 360'],
-				['cc-xbox360-o', 'Xbox 360 Outlined'],
-				['cc-ps3', 'PlayStation 3'],
-				['cc-ps3-o', 'PlayStation 3 Outlined'],
-				['cc-wii-remote', 'Wii Remote'],
-				['cc-wii-remote-o', 'Wii Remote Outlined'],
-				['cc-wiiu', 'Wii U'],
-				['cc-wiiu-o', 'Wii U Outlined'],
-				['cc-ps4', 'PlayStation 4'],
-				['cc-ps4-o', 'PlayStation 4 Outlined'],
-				['cc-xboxone', 'Xbox One'],
-				['cc-xboxone-o', 'Xbox One Outlined'],
-				['cc-switch-joycon-l', 'Switch Joy Con (L)'],
-				['cc-switch-joycon-l-o', 'Switch Joy Con (L) Outlined'],
-				['cc-switch-joycon-r', 'Switch Joy Con (R)'],
-				['cc-switch-joycon-r-o', 'Switch Joy Con (R) Outlined'],
-				['cc-switch', 'Switch'],
-				['cc-switch-o', 'Switch Outlined'],
+				['󌀀', 'cc-nes', 'NES'],
+				['󌀁', 'cc-nes-o', 'NES Outlined'],
+				['󌀂', 'cc-megadrive', 'SEGA Megadrive/Genesis'],
+				['󌀃', 'cc-megadrive-o', 'SEGA Megadrive/Genesis Outlined'],
+				['󌀄', 'cc-snes', 'SNES'],
+				['󌀅', 'cc-snes-o', 'SNES Outlined'],
+				['󌀆', 'cc-ps1', 'PlayStation'],
+				['󌀇', 'cc-ps1-o', 'PlayStation Outlined'],
+				['󌀈', 'cc-n64', 'N64'],
+				['󌀉', 'cc-n64-o', 'N64 Outlined'],
+				['󌀐', 'cc-ps2', 'PlayStation 2'],
+				['󌀑', 'cc-ps2-o', 'PlayStation 2 Outlined'],
+				['󌀒', 'cc-xbox', 'Xbox'],
+				['󌀓', 'cc-xbox-o', 'Xbox Outlined'],
+				['󌀔', 'cc-gamecube', 'Gamecube'],
+				['󌀕', 'cc-gamecube-o', 'Gamecube Outlined'],
+				['󌀖', 'cc-xbox360', 'Xbox 360'],
+				['󌀗', 'cc-xbox360-o', 'Xbox 360 Outlined'],
+				['󌀘', 'cc-ps3', 'PlayStation 3'],
+				['󌀙', 'cc-ps3-o', 'PlayStation 3 Outlined'],
+				['󌀠', 'cc-wii-remote', 'Wii Remote'],
+				['󌀡', 'cc-wii-remote-o', 'Wii Remote Outlined'],
+				['󌀢', 'cc-wiiu', 'Wii U'],
+				['󌀣', 'cc-wiiu-o', 'Wii U Outlined'],
+				['󌀤', 'cc-ps4', 'PlayStation 4'],
+				['󌀥', 'cc-ps4-o', 'PlayStation 4 Outlined'],
+				['󌀦', 'cc-xboxone', 'Xbox One'],
+				['󌀧', 'cc-xboxone-o', 'Xbox One Outlined'],
+				['󌀨', 'cc-switch-joycon-l', 'Switch Joy Con (L)'],
+				['󌀩', 'cc-switch-joycon-l-o', 'Switch Joy Con (L) Outlined'],
+				['󌀰', 'cc-switch-joycon-r', 'Switch Joy Con (R)'],
+				['󌀱', 'cc-switch-joycon-r-o', 'Switch Joy Con (R) Outlined'],
+				['󌀲', 'cc-switch', 'Switch'],
+				['󌀳', 'cc-switch-o', 'Switch Outlined'],
 			];
 		}
 
@@ -84,8 +84,8 @@
 					if (index < charmap.length) {
 						var chr = charmap[index];
 
-						gridHtml += '<td title="' + chr[1] + '"><div tabindex="-1" title="' + chr[1] + '" role="button">' +
-							(chr ? '<i class="cc ' + chr[0] + '"></i>' : '&nbsp;') + '</div></td>';
+						gridHtml += '<td title="' + chr[2] + '"><div tabindex="-1" title="' + chr[2] + '" role="button" data-class="' + chr[1] + '" style="font-family: controllercons">' +
+							(chr ? chr[0] : '&nbsp;') + '</div></td>';
 					} else {
 						gridHtml += '<td />';
 					}
@@ -104,7 +104,7 @@
 
 					if (/^(TD|DIV)$/.test(target.nodeName)) {
 						if (getParentTd(target).firstChild) {
-							insertControllercon(target.innerText);
+							insertControllercon(target.getAttribute('data-class'));
 
 							if (!e.ctrlKey) {
 								win.close();
@@ -116,7 +116,7 @@
 					var td = getParentTd(e.target);
 
 					if (td && td.firstChild) {
-						win.find('#preview').text('td.firstChild.firstChild');
+						win.find('#preview').text(td.firstChild.firstChild.textContent);
 						win.find('#previewTitle').text(td.title);
 					} else {
 						win.find('#preview').text(' ');
@@ -133,18 +133,19 @@
 					charMapPanel,
 					{
 						type: 'container',
-						layout: 'flex',
+						layout: 'flow',
 						direction: 'column',
 						align: 'center',
 						spacing: 5,
 						minWidth: 240,
 						minHeight: 160,
+						style: 'text-align: center',
 						items: [
 							{
 								type: 'label',
 								name: 'preview',
 								text: ' ',
-								style: 'font-size: 40px; text-align: center',
+								style: 'display: block; font-family: controllercons; font-size: 60px; margin-bottom: 15px; margin-left: auto; margin-right: auto; text-align: center',
 								border: 1,
 								minWidth: 220,
 								minHeight: 80
@@ -153,7 +154,7 @@
 								type: 'label',
 								name: 'previewTitle',
 								text: ' ',
-								style: 'text-align: center',
+								style: 'display: block; margin-left: auto; margin-right: auto; text-align: center',
 								border: 1,
 								minWidth: 220,
 								minHeight: 80
