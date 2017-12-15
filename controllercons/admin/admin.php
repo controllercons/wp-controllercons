@@ -17,7 +17,6 @@ add_action( 'admin_menu', 'controllercons_add_menu' );
 
 function controllercons_admin_styles()
 {
-	// Admin
 	wp_register_style( 'controllercons-font', plugins_url( 'css/controllercons-font.css', __FILE__ ), false, CONTROLLERCONS_VERSION );
 	wp_register_style( 'controllercons-mce', plugins_url( 'css/controllercons-mce.css', __FILE__ ), false, CONTROLLERCONS_VERSION );
 	
@@ -26,15 +25,16 @@ function controllercons_admin_styles()
 }
 add_action( 'admin_enqueue_scripts', 'controllercons_admin_styles' );
 
-function controllercons_editor_styles()
+function controllercons_admin_init()
 {
 	add_editor_style( plugins_url( 'css/controllercons-editor-styles.css', __FILE__ ) );
 }
-add_action( 'admin_init', 'controllercons_editor_styles' );
+add_action( 'admin_init', 'controllercons_admin_init' );
 
 function controllercons_register_settings()
 {
-	register_setting( 'controllercons-globals', 'minify' );
+	register_setting( 'controllercons-globals', 'cc_minify' );
+	register_setting( 'controllercons-globals', 'cc_external_source' );
 }
 
 function controllercons_settings()
@@ -46,11 +46,29 @@ function controllercons_settings()
 		<form method="post" action="options.php">
 			<?php settings_fields( 'controllercons-globals' ); ?>
 			<?php do_settings_sections( 'controllercons-globals' ); ?>
+			
 			<table class="form-table">
+
+				<?php
+				if ( get_option( 'cc_minify' ) === 'true' ) { 
+					$checked = ' checked="checked"';
+				} else {
+					$checked = '';
+				}
+				?>
+				
 				<tr valign="top">
-					<th scope="row">New Option Name</th>
+					<th scope="row"><label for="cc-minify"><?php _e( 'Minify Source?', 'controllercons' ); ?></label></th>
 					<td>
-						<input type="text" name="minify" value="<?php echo esc_attr( get_option ( 'minify' ) ); ?>" />
+						<input type="checkbox" id="cc-minify" name="cc_minify" value="true"<?php echo $checked; ?>>
+						<p class="description"><?php _e( 'Recommended for decreased loading times.', 'controllercons' ); ?></p>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><label for="cc-external-source"><?php _e( 'External Source', 'controllercons' ); ?></label></th>
+					<td>
+						<input type="url" id="cc-external-source" name="cc_external_source" value="<?php echo esc_attr( get_option( 'cc_external_source' ) ); ?>">
+						<p class="description"><?php _e( 'Optionally provide an external source for the controllercons.css file.', 'controllercons' ); ?></p>
 					</td>
 				</tr>
 			</table>

@@ -6,14 +6,14 @@
  Plugin Name: Controllercons
  Plugin URI: https://controllercons.github.io/
  Description: Embed Controllercons video game icons directly into your site.
- Version: 0.1.0
+ Version: 1.0.0
  Author: Kieran McClung
  Author URI: https://kieranmcclung.wordpress.com/
  License: GPLv2 or later
  Text Domain: controllercons
  */
 
-define( 'CONTROLLERCONS_VERSION', '0.1.0' );
+define( 'CONTROLLERCONS_VERSION', '1.0.0' );
 define( 'CONTROLLERCONS_DIR', dirname( __FILE__ ) . '/' );  
 
 if ( ! class_exists( 'Controllercons' ) ) :
@@ -28,86 +28,115 @@ class Controllercons
 	
 	var $settings = array();
 	
+	protected static $instance = NULL;
+	
 	public function __construct()
 	{
-		$this->settings['controllers'] = array(
-			'gamecube',
-			'gamecube_outlined',
-			'megadrive',
-			'megadrive_outlined',
-			'n64',
-			'n64_outlined',
-			'nes',
-			'nes_outlined',
-			'ps1',
-			'ps1_outlined',
-			'ps2',
-			'ps2_outlined',
-			'ps3',
-			'ps3_outlined',
-			'ps4',
-			'ps4_outlined',
-			'snes',
-			'snes_outlined',
-			'switch',
-			'switch_outlined',
-			'switch-joycon-l',
-			'switch-joycon-l_outlined',
-			'switch-joycon-r',
-			'switch-joycon-r_outlined',
-			'xbox',
-			'xbox_outlined',
-			'xbox360',
-			'xbox360_outlined',
-			'xboxone',
-			'xboxone_outlined',
-			'wii-remote',
-			'wii-remote_outlined',
-			'wiiu',
-			'wiiu_outlined',
+		$this->settings = array(
+			'controllers' => array(
+				'gamecube',
+				'gamecube-o',
+				'megadrive',
+				'megadrive-o',
+				'n64',
+				'n64-o',
+				'nes',
+				'nes-o',
+				'ps1',
+				'ps1-o',
+				'ps2',
+				'ps2-o',
+				'ps3',
+				'ps3-o',
+				'ps4',
+				'ps4-o',
+				'snes',
+				'snes-o',
+				'switch',
+				'switch-o',
+				'switch-joycon-l',
+				'switch-joycon-l-o',
+				'switch-joycon-r',
+				'switch-joycon-r-o',
+				'xbox',
+				'xbox-o',
+				'xbox360',
+				'xbox360-o',
+				'xboxone',
+				'xboxone-o',
+				'wii-remote',
+				'wii-remote-o',
+				'wiiu',
+				'wiiu-o',
+			),
 		);
-		
-		// Public
+
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_styles' ) );
+	}
+	
+	public static function get_instance()
+	{
+		NULL === self::$instance and self::$instance = new self;
+
+		return self::$instance;
 	}
 	
 	public function load_styles()
 	{
-		// @TODO add setting for minified source
-		wp_register_style( 'controllercons', plugins_url( 'css/controllercons.css', __FILE__ ), false, $this->version );
+		if ( get_option( 'cc_external_source' ) == '' ) {
+			
+			if ( get_option( 'cc_minify' ) === 'true' ) {
+				$file = 'controllercons-min.css';
+			} else {
+				$file = 'controllercons.css';
+			}
+
+			wp_register_style( 'controllercons', plugins_url( "css/$file", __FILE__ ), false, $this->version );
+			
+		} else {
+			wp_register_style( 'controllercons', get_option( 'cc_external_source' ), false, $this->version );
+		}
+		
 		wp_enqueue_style( 'controllercons' );
 	}
 	
 	public function controllercon_shortcode( $atts )
 	{
-		$class = $atts['class'];
+		( isset( $atts['size'] ) ? $size = $atts['size'] : $size = 1 );
+		( isset( $atts['id'] ) ? $id = $atts['id'] : $is = 'none' );
 		
-		return $this->generate_icon( $class );
+		return $this->generate_icon( $id, $size );
 	}
 	
-	private function generate_icon( $class )
+	private function generate_icon( $id, $size )
 	{
-		if ( ! in_array( $this->settings['controllers'] ) ) {
+		if ( ! in_array( $id, $this->settings['controllers'] ) ) {
 			return 'Controller not found';
 		}
 		
-		// @TODO cross reference settings with shortcode class
-	}
-}
-
-function controllercons()
-{
-	global $controllercons;
-	
-	if ( ! isset( $controllercons ) ) {
-		$controllercons = new Controllercons();
+		$size = $this->format_size( $size );
+		
+		return '<i class="cc cc-' . $id . '" ' . ( $size ? ' style="font-size:' . $size . ';"' : '' ) . '></i>';
 	}
 	
-	return $controllercons;
+	private function format_size( $size )
+	{
+		$prepend = 'em';
+		
+		if ( ! is_numeric( $size ) ) {
+			if ( strpos( $size, 'px' ) !== false ) {
+				$prepend = 'px';
+			} elseif ( strpos( $size, 'rem' ) !== false ) {
+				$prepend = 'rem';
+			}
+			
+			$size = preg_replace( "/[^0-9.]/", "", $size );
+		}
+		
+		return $size .= $prepend;
+	}
 }
-
-controllercons();
 
 endif;
 
-add_shortcode( 'controllercon', array( 'Controllercons', 'controllercon_shortcode' ) );
+add_shortcode( 'controllercon', array( Controllercons::get_instance(), 'controllercon_shortcode' ) );

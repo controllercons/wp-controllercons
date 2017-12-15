@@ -6,6 +6,10 @@
 	font-style: normal;
 }
 
+body#tinymce.wp-editor .controllercon {
+	font-family: controllercons;
+}
+
 body#tinymce.wp-editor .cc:before {
   display: inline-block;
   font-family: "controllercons";
