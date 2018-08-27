@@ -24,137 +24,203 @@ body#tinymce.wp-editor .cc:before {
 }
 
 body#tinymce.wp-editor .cc-nes:before {
-  content: "\cc000";
+	content: '󌀀';
 }
 
 body#tinymce.wp-editor .cc-nes-o:before {
-  content: "\cc001";
+	content: '󌀁';
 }
 
 body#tinymce.wp-editor .cc-megadrive:before {
-  content: "\cc002";
+	content: '󌀂';
 }
 
 body#tinymce.wp-editor .cc-megadrive-o:before {
-  content: "\cc003";
+	content: '󌀃';
 }
 
 body#tinymce.wp-editor .cc-snes:before {
-  content: "\cc004";
+	content: '󌀄';
 }
 
 body#tinymce.wp-editor .cc-snes-o:before {
-  content: "\cc005";
+	content: '󌀅';
 }
 
-body#tinymce.wp-editor .cc-ps1:before {
-  content: "\cc006";
+body#tinymce.wp-editor .cc-ps1:before,
+body#tinymce.wp-editor .cc-psx:before {
+	content: '󌀆';
 }
 
-body#tinymce.wp-editor .cc-ps1-o:before {
-  content: "\cc007";
+body#tinymce.wp-editor .cc-ps1-o:before,
+body#tinymce.wp-editor .cc-psx-o:before {
+	content: '󌀇';
 }
 
 body#tinymce.wp-editor .cc-n64:before {
-  content: "\cc008";
+	content: '󌀈';
 }
 
 body#tinymce.wp-editor .cc-n64-o:before {
-  content: "\cc009";
+	content: '󌀉';
 }
 
 body#tinymce.wp-editor .cc-ps2:before {
-  content: "\cc010";
+	content: '󌀐';
 }
 
 body#tinymce.wp-editor .cc-ps2-o:before {
-  content: "\cc011";
+	content: '󌀑';
 }
 
 body#tinymce.wp-editor .cc-xbox:before {
-  content: "\cc012";
+	content: '󌀒';
 }
 
 body#tinymce.wp-editor .cc-xbox-o:before {
-  content: "\cc013";
+	content: '󌀓';
 }
 
 body#tinymce.wp-editor .cc-gamecube:before {
-  content: "\cc014";
+	content: '󌀔';
 }
 
 body#tinymce.wp-editor .cc-gamecube-o:before {
-  content: "\cc015";
+	content: '󌀕';
 }
 
 body#tinymce.wp-editor .cc-xbox360:before {
-  content: "\cc016";
+	content: '󌀖';
 }
 
 body#tinymce.wp-editor .cc-xbox360-o:before {
-  content: "\cc017";
+	content: '󌀗';
 }
 
 body#tinymce.wp-editor .cc-ps3:before {
-  content: "\cc018";
+	content: '󌀘';
 }
 
 body#tinymce.wp-editor .cc-ps3-o:before {
-  content: "\cc019";
+	content: '󌀙';
 }
 
-body#tinymce.wp-editor .cc-wii-remote:before {
-  content: "\cc020";
+body#tinymce.wp-editor .cc-wii-remote:before,
+body#tinymce.wp-editor .cc-wii:before {
+	content: '󌀠';
 }
 
-body#tinymce.wp-editor .cc-wii-remote-o:before {
-  content: "\cc021";
+body#tinymce.wp-editor .cc-wii-remote-o:before,
+body#tinymce.wp-editor .cc-wii-o:before {
+	content: '󌀡';
 }
 
 body#tinymce.wp-editor .cc-wiiu:before {
-  content: "\cc022";
+	content: '󌀢';
 }
 
 body#tinymce.wp-editor .cc-wiiu-o:before {
-  content: "\cc023";
+	content: '󌀣';
 }
 
 body#tinymce.wp-editor .cc-ps4:before {
-  content: "\cc024";
+	content: '󌀤';
 }
 
 body#tinymce.wp-editor .cc-ps4-o:before {
-  content: "\cc025";
+	content: '󌀥';
 }
 
 body#tinymce.wp-editor .cc-xboxone:before {
-  content: "\cc026";
+	content: '󌀦';
 }
 
 body#tinymce.wp-editor .cc-xboxone-o:before {
-  content: "\cc027";
+	content: '󌀧';
 }
 
-body#tinymce.wp-editor .cc-switch-joycon-l:before {
-  content: "\cc028";
+body#tinymce.wp-editor .cc-switch-joycon-l:before,
+body#tinymce.wp-editor .cc-joyconl:before {
+	content: '󌀨';
 }
 
-body#tinymce.wp-editor .cc-switch-joycon-l-o:before {
-  content: "\cc029";
+body#tinymce.wp-editor .cc-switch-joycon-l-o:before,
+body#tinymce.wp-editor .cc-joyconl-o:before {
+	content: '󌀩';
 }
 
-body#tinymce.wp-editor .cc-switch-joycon-r:before {
-  content: "\cc030";
+body#tinymce.wp-editor .cc-switch-joycon-r:before,
+body#tinymce.wp-editor .cc-joyconr:before {
+	content: '󌀰';
 }
 
-body#tinymce.wp-editor .cc-switch-joycon-r-o:before {
-  content: "\cc031";
+body#tinymce.wp-editor .cc-switch-joycon-r-o:before,
+body#tinymce.wp-editor .cc-joyconr-o:before {
+	content: '󌀱';
 }
 
-body#tinymce.wp-editor .cc-switch:before {
-  content: "\cc032";
+body#tinymce.wp-editor .cc-atari2600:before {
+	content: '󌄀';
 }
 
-body#tinymce.wp-editor .cc-switch-o:before {
-  content: "\cc033";
+body#tinymce.wp-editor .cc-atari2600-o:before {
+	content: '󌄁';
+}
+
+body#tinymce.wp-editor .cc-mastersystem:before {
+	content: '󌄂';
+}
+
+body#tinymce.wp-editor .cc-mastersystem-o:before {
+	content: '󌄃';
+}
+
+body#tinymce.wp-editor .cc-virtualboy:before {
+	content: '󌄄';
+}
+
+body#tinymce.wp-editor .cc-virtualboy-o:before {
+	content: '󌄅';
+}
+
+body#tinymce.wp-editor .cc-dreamcast:before {
+	content: '󌄆';
+}
+
+body#tinymce.wp-editor .cc-dreamcast-o:before {
+	content: '󌄇';
+}
+
+body#tinymce.wp-editor .cc-xboxs:before {
+	content: '󌄈';
+}
+
+body#tinymce.wp-editor .cc-xboxs-o:before {
+	content: '󌄉';
+}
+
+body#tinymce.wp-editor .cc-wiiclassic:before {
+	content: '󌄐';
+}
+
+body#tinymce.wp-editor .cc-wiiclassic-o:before {
+	content: '󌄑';
+}
+
+body#tinymce.wp-editor .cc-wiiupro:before {
+	content: '󌄒';
+}
+
+body#tinymce.wp-editor  .cc-wiiupro-o:before {
+	content: '󌄓';
+}
+
+body#tinymce.wp-editor .cc-switch:before,
+body#tinymce.wp-editor .cc-switchpro:before {
+	content: '󌄔';
+}
+
+body#tinymce.wp-editor .cc-switch-o:before,
+body#tinymce.wp-editor .cc-switchpro-o:before {
+	content: '󌄕';
 }

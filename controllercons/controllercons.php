@@ -6,14 +6,14 @@
  Plugin Name: Controllercons
  Plugin URI: https://controllercons.github.io/
  Description: Embed Controllercons video game icons directly into your site.
- Version: 1.0.0
+ Version: 1.1.0
  Author: Kieran McClung
  Author URI: https://kieranmcclung.wordpress.com/
  License: GPLv2 or later
  Text Domain: controllercons
  */
 
-define( 'CONTROLLERCONS_VERSION', '1.0.0' );
+define( 'CONTROLLERCONS_VERSION', '1.1.0' );
 define( 'CONTROLLERCONS_DIR', dirname( __FILE__ ) . '/' );  
 
 if ( ! class_exists( 'Controllercons' ) ) :
@@ -34,8 +34,18 @@ class Controllercons
 	{
 		$this->settings = array(
 			'controllers' => array(
+				'atari2600',
+				'atari2600-o',
+				'dreamcast',
+				'dreamcast-o',
 				'gamecube',
 				'gamecube-o',
+				'joyconl',
+				'joyconl-o',
+				'joyconr',
+				'joyconr-o',
+				'mastersystem',
+				'mastersystem-o',
 				'megadrive',
 				'megadrive-o',
 				'n64',
@@ -52,22 +62,26 @@ class Controllercons
 				'ps4-o',
 				'snes',
 				'snes-o',
-				'switch',
-				'switch-o',
-				'switch-joycon-l',
-				'switch-joycon-l-o',
-				'switch-joycon-r',
-				'switch-joycon-r-o',
+				'switchpro',
+				'switchpro-o',
+				'virtualboy',
+				'virtualboy-o',
+				'wii',
+				'wii-o',
+				'wiiclassic',
+				'wiiclassic-o',
+				'wiiu',
+				'wiiu-o',
+				'wiiupro',
+				'wiiupro-o',
 				'xbox',
 				'xbox-o',
+				'xboxs',
+				'xboxs-o',
 				'xbox360',
 				'xbox360-o',
 				'xboxone',
 				'xboxone-o',
-				'wii-remote',
-				'wii-remote-o',
-				'wiiu',
-				'wiiu-o',
 			),
 		);
 

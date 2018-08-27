@@ -5,7 +5,7 @@ Tags: icons,
 Requires at least: 3.6.0
 Tested up to: 4.9.1
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,8 +33,18 @@ Shortcodes can also be used in your site template files using the following func
 
 Below is a list of controller references:
 
+*atari2600
+*atari2600
+*dreamcast
+*dreamcast-o
 *gamecube
 *gamecube-o
+*joyconl
+*joyconl-o
+*joyconr
+*joyconr-o
+*mastersystem
+*mastersystem-o
 *megadrive
 *megadrive-o
 *n64
@@ -51,22 +61,26 @@ Below is a list of controller references:
 *ps4-o
 *snes
 *snes-o
-*switch
-*switch-o
-*switch-joycon-l
-*switch-joycon-l-o
-*switch-joycon-r
-*switch-joycon-r-o
+*switchpro
+*switchpro-o
+*virtualboy
+*virtualboy-o
+*wii
+*wii-o
+*wiiclassic
+*wiiclassic-o
+*wiiu
+*wiiu-o
+*wiiupro
+*wiiupro-o
 *xbox
 *xbox-o
+*xboxs
+*xboxs-o
 *xbox360
 *xbox360-o
 *xboxone
 *xboxone-o
-*wii-remote
-*wii-remote-o
-*wiiu'
-*wiiu-o
 
 **MORE INFORMATION**
 To find out more about the Controllercons project visit [Controllercons](https://controllercons.github.io/ "Controllercons - Video Game Controller Icons")
@@ -88,6 +102,11 @@ To find out more about the Controllercons project visit [Controllercons](https:/
 
 
 == Changelog ==
+
+= 1.1.0 =
+* New icons for Atari 2600, Sega Mastersystem, Virtualboy, Sega Dreamcast, Xbox Slim, Wii Classic, Wii Pro & Switch Pro.
+* Revampped outline icons
+* Tidied up standard icons
 
 = 1.0.0 =
 * Initial release.
