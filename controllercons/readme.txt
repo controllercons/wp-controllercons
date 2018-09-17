@@ -33,54 +33,54 @@ Shortcodes can also be used in your site template files using the following func
 
 Below is a list of controller references:
 
-*atari2600
-*atari2600
-*dreamcast
-*dreamcast-o
-*gamecube
-*gamecube-o
-*joyconl
-*joyconl-o
-*joyconr
-*joyconr-o
-*mastersystem
-*mastersystem-o
-*megadrive
-*megadrive-o
-*n64
-*n64-o
-*nes
-*nes-o
-*ps1
-*ps1-o
-*ps2
-*ps2-o
-*ps3
-*ps3-o
-*ps4
-*ps4-o
-*snes
-*snes-o
-*switchpro
-*switchpro-o
-*virtualboy
-*virtualboy-o
-*wii
-*wii-o
-*wiiclassic
-*wiiclassic-o
-*wiiu
-*wiiu-o
-*wiiupro
-*wiiupro-o
-*xbox
-*xbox-o
-*xboxs
-*xboxs-o
-*xbox360
-*xbox360-o
-*xboxone
-*xboxone-o
+* atari2600
+* atari2600
+* dreamcast
+* dreamcast-o
+* gamecube
+* gamecube-o
+* joyconl
+* joyconl-o
+* joyconr
+* joyconr-o
+* mastersystem
+* mastersystem-o
+* megadrive
+* megadrive-o
+* n64
+* n64-o
+* nes
+* nes-o
+* ps1
+* ps1-o
+* ps2
+* ps2-o
+* ps3
+* ps3-o
+* ps4
+* ps4-o
+* snes
+* snes-o
+* switchpro
+* switchpro-o
+* virtualboy
+* virtualboy-o
+* wii
+* wii-o
+* wiiclassic
+* wiiclassic-o
+* wiiu
+* wiiu-o
+* wiiupro
+* wiiupro-o
+* xbox
+* xbox-o
+* xboxs
+* xboxs-o
+* xbox360
+* xbox360-o
+* xboxone
+* xboxone-o
 
 **MORE INFORMATION**
 To find out more about the Controllercons project visit [Controllercons](https://controllercons.github.io/ "Controllercons - Video Game Controller Icons")
@@ -89,9 +89,9 @@ To find out more about the Controllercons project visit [Controllercons](https:/
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress Plugin Manager.
-1. Once downloaded, activate via the Plugin Manager.
-1. Enjoy!
-1. You an also tweak the settings via the Controllercons settings page in the admin menu.
+2. Once downloaded, activate via the Plugin Manager.
+3. Enjoy!
+4. You an also tweak the settings via the Controllercons settings page in the admin menu.
 
 
 == Screenshots ==
